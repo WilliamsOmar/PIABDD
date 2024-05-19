@@ -1,0 +1,6 @@
+@PiaBD_HostAddress = http://localhost:5122
+
+GET {{PiaBD_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
