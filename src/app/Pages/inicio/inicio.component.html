@@ -1,0 +1,89 @@
+<mat-card style="width: 98%; margin: 50px auto;">
+  <mat-card-header>
+    <mat-card-title> <p>Lista Propiedades</p> </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <button mat-flat-button color="primary" (click)="nuevo()">Nueva Propiedad</button>
+
+    <table mat-table [dataSource]="listaPropiedades" class="mat-elevation-z2" style="margin-top: 20px;">
+
+      <ng-container matColumnDef="IDPropiedad">
+        <th mat-header-cell *matHeaderCellDef> ID Propiedad </th>
+        <td mat-cell *matCellDef="let element"> {{element.IDPropiedad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="TerrenoM2">
+        <th mat-header-cell *matHeaderCellDef> Metros Cuadrados </th>
+        <td mat-cell *matCellDef="let element"> {{element.TerrenoM2}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CantCuartos">
+        <th mat-header-cell *matHeaderCellDef> Cantidad De Cuartos </th>
+        <td mat-cell *matCellDef="let element"> {{element.CantCuartos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CantBanhos">
+        <th mat-header-cell *matHeaderCellDef> Cantidad De Baños </th>
+        <td mat-cell *matCellDef="let element"> {{element.CantBanhos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CantDormitorios">
+        <th mat-header-cell *matHeaderCellDef> Cantidad De Dormitorios </th>
+        <td mat-cell *matCellDef="let element"> {{element.CantDormitorios}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="NotasExtra">
+        <th mat-header-cell *matHeaderCellDef> Notas Extra </th>
+        <td mat-cell *matCellDef="let element"> {{element.NotasExtra}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Precio">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.Precio}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="FechaDeCompra">
+        <th mat-header-cell *matHeaderCellDef> Fecha De Compra </th>
+        <td mat-cell *matCellDef="let element"> {{element.FechaDeCompra}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="IDDireccionPropiedadesP">
+        <th mat-header-cell *matHeaderCellDef> Direccion Propiedad </th>
+        <td mat-cell *matCellDef="let element"> {{element.IDDireccionPropiedadesP}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="IDEstatusPropiedadP">
+        <th mat-header-cell *matHeaderCellDef> Estatus Propiedad </th>
+        <td mat-cell *matCellDef="let element"> {{element.IDEstatusPropiedadP}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="IDPropietarioP">
+        <th mat-header-cell *matHeaderCellDef> ID Propietario </th>
+        <td mat-cell *matCellDef="let element"> {{element.IDPropietarioP}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="editar(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+  </mat-card-content>
+</mat-card>
